@@ -9,6 +9,8 @@ npm run build
 # navigate into the build output directory
 cd dist
 
+cat ../../README.md > README.md
+
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
