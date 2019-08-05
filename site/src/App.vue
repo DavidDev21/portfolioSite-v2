@@ -2,8 +2,8 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>This is niceeeeee</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>David Zheng</span>
+        <span class="font-weight-light"></span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
