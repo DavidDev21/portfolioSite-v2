@@ -1,13 +1,14 @@
 <template>
   <div>
-    <v-container class="container_style" fluid>
+    <v-container class="container_style" fluid pt-0>
       <!-- Profile Card Section / Top Intro Section-->
       <v-layout row wrap>
         <v-parallax class="parallax_image elevation--0" :src="require('@/assets/NYC_background.jpg')">
           <v-layout align-center justify-center row>
             <v-flex>
-              <v-card class="mx-auto profile_card" min-height="300px" max-width="725px">
-                <v-layout row wrap align-center justify-center>
+              <!-- Profile Card -->
+              <v-container class="mx-auto profile_card">
+                <v-layout class="text-black profile_content" pa-0 row wrap justify-center align-center>
                   <v-flex md3 shrink class="mr-4">
                     <v-img
                       class="profile_img"
@@ -17,25 +18,50 @@
                     >
                     </v-img>
                   </v-flex>
-
+                  
                   <div class="divider_line">
                   </div>
                   <v-flex md7 ml-4 my-5>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante quis odio faucibus, ac convallis nunc tempor. Aenean vestibulum consequat magna, at ultrices quam sagittis a. Nam tempor varius ante ut hendrerit. Donec interdum blandit diam, sed vestibulum lorem facilisis eget. Donec porta diam dui, at lacinia magna tempus id. Suspendisse gravida porttitor elit, et tincidunt odio varius sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut nisi a velit tempus iaculis. Mauris laoreet dapibus pellentesque. In auctor
-                    </p>
+                    <!-- Right side of the profile card-->
+                    <v-container>
+                      <!-- Profile description -->
+                      <v-layout row wrap>
+                        <v-flex>
+                          <h3>Hi, my name is David Zheng</h3>
+                          <p>
+                            I am a senior at NYU Tandon studying Computer Science. I started coding since high school
+                            on the robotics team and always loved creating solutions towards challenging problems. Computer Science 
+                            has taught me to tackle difficult problems through logical and creative thinking. Perspective and persistent 
+                            are important when solutions aren't obvious. I'm a quick learner and enthusiastic about tackling difficult problems
+                            and growing as an individual. 
+                          </p>
+                        </v-flex>
+                      </v-layout>
+                      <!-- Profile links-->
+                      <v-layout mt-3 row wrap justify-center>
+                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21">Github <v-icon right>fab fa-github</v-icon></v-btn>
+                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/">LinkedIn <v-icon right>fab fa-linkedin</v-icon></v-btn>
+                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="@/assets/David_Zheng_Resume.pdf" download>Resume <v-icon right>fas fa-download</v-icon></v-btn>
+                      </v-layout>
+                    </v-container>
                   </v-flex>
                 </v-layout>
-              </v-card>
+              </v-container>
             </v-flex>
           </v-layout>
         </v-parallax>
+      </v-layout>
+      <v-layout row wrap justify-center>
+        <p class="test">TEST</p>
+      </v-layout>
       <!-- Then follows Education-->
-
+      <v-layout row wrap justify-content>
+        <v-flex>
+        </v-flex>
+      </v-layout>
       <!-- Experience -->
 
       <!-- Projects -->
-      </v-layout>
     </v-container>
   </div>
 </template>
@@ -43,14 +69,18 @@
 <style scoped>
 .test
 {
-  background: red;
+  background: #8F1AF1;
+  width: 100%;
 }
 
+.text-black
+{
+  color: black;
+}
 .divider_line
 {
   border-left: 1.5px solid gray;
-  opacity: .5;
-  height: 250px;
+  height: 175px;
 }
 
 .profile_img
@@ -60,12 +90,15 @@
 
 .profile_content
 {
-  opacity: 1;
+  padding-top: 6%;
+  padding-bottom: 6%;
 }
 .profile_card
 {
   border-radius: 5%;
-  opacity: .85;
+  background-color: rgba(255,255,255,0.7);
+  max-width: 820px;
+  min-height: 300px;
 }
 .parallax_image
 {
@@ -74,6 +107,12 @@
   opacity: .85;
 }
 
+/* Button Hover */
+.btn_hover:Hover
+{
+  background-color:lightblue !important;
+  transform: scale(1.09);
+}
 .container_style
 {
 }

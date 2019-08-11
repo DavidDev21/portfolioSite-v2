@@ -11,7 +11,28 @@
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Education</span>
+      </v-btn>
+      <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Experience</span>
+      </v-btn>
+      <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Projects</span>
+      </v-btn>
+      <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Contact</span>
       </v-btn>
     </v-app-bar>
 
