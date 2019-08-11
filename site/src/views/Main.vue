@@ -3,7 +3,7 @@
     <v-container class="container_style" fluid pt-0>
       <!-- Profile Card Section / Top Intro Section-->
       <v-layout row wrap>
-        <v-parallax class="parallax_image elevation--0" :src="require('@/assets/NYC_background.jpg')">
+        <v-parallax class="parallax_image lower_opacity elevation--0" :src="require('@/assets/NYC_background.jpg')">
           <v-layout align-center justify-center row>
             <v-flex>
               <!-- Profile Card -->
@@ -51,13 +51,17 @@
           </v-layout>
         </v-parallax>
       </v-layout>
-      <v-layout row wrap justify-center>
-        <p class="test">TEST</p>
-      </v-layout>
+
       <!-- Then follows Education-->
-      <v-layout row wrap justify-content>
-        <v-flex>
-        </v-flex>
+      <v-layout class="education_section" row wrap justify-content>
+        <v-parallax class="parallax_image" :src="require('@/assets/test.png')">
+          <v-flex>
+            <v-container class="education_content">
+              <v-layout>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-parallax>
       </v-layout>
       <!-- Experience -->
 
@@ -76,6 +80,11 @@
 .text-black
 {
   color: black;
+}
+
+.lower_opacity
+{
+  opacity: 0.85;
 }
 .divider_line
 {
@@ -104,7 +113,6 @@
 {
   width: 100%;
   height: 100%;
-  opacity: .85;
 }
 
 /* Button Hover */
@@ -115,6 +123,16 @@
 }
 .container_style
 {
+}
+
+/* Education Section styles*/
+.education_section
+{
+  background: purple;
+}
+
+.education_content{
+  height:500px;
 }
 </style>
 
