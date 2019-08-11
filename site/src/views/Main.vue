@@ -27,7 +27,7 @@
                       <!-- Profile description -->
                       <v-layout row wrap>
                         <v-flex>
-                          <h3>Hi, my name is David Zheng</h3>
+                          <h3 style="margin-bottom:3px;">Hi, my name is David Zheng</h3>
                           <p>
                             I am a senior at NYU Tandon studying Computer Science. I started coding since high school
                             on the robotics team and always loved creating solutions towards challenging problems. Computer Science 
@@ -53,15 +53,47 @@
       </v-layout>
 
       <!-- Then follows Education-->
-      <v-layout class="education_section" row wrap justify-content>
-        <v-parallax class="parallax_image" :src="require('@/assets/test.png')">
-          <v-flex>
-            <v-container class="education_content">
-              <v-layout>
-              </v-layout>
-            </v-container>
-          </v-flex>
-        </v-parallax>
+      <v-layout class="education_section" row wrap justify-center pb-5>
+        <v-container pa-5 class="education_container">
+          <v-layout row wrap>
+            <v-flex mb-3 pa-4>
+              <h2 class="text-white">Education</h2>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap justify-space-around>
+            <!-- School Logo -->
+            <v-flex align-self-center sm2>   
+              <v-img
+                class="profile_img"
+                :src="require('@/assets/nyu.png')"
+                max-height="270px"
+                max-width="270px"
+              >
+              </v-img>
+            </v-flex>
+            <v-flex sm9>
+              <!-- Education description -->
+              <v-container class="education_content text-white">
+                <v-layout row wrap pa-3>
+                  <v-flex>
+                    <h3>NYU Tandon School of Engineering | B.S Computer Science | 2016 - 2020</h3>
+                  </v-flex>
+                </v-layout>
+                <v-layout row wrap px-5>
+                  <v-flex>
+                    <ul>
+                      <li><strong>Relevant Coursework: </strong> Data Structures &amp; Algorithms,
+                          Databases, Computer Networking, Operating Systems, Software Engineering, OOP
+                      </li>
+                      <li><strong>Awards: </strong> Pearl Junior Brownstein Award, Dean's List 2016-2019</li>
+                      <li><strong>GPA: </strong> 3.9</li>
+                    </ul>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+          </v-layout>
+        </v-container>
       </v-layout>
       <!-- Experience -->
 
@@ -79,7 +111,15 @@
 
 .text-black
 {
-  color: black;
+  color:black;
+}
+.text-blue
+{
+  color: #3b8ad8;
+}
+.text-white
+{
+  color: white;
 }
 
 .lower_opacity
@@ -94,7 +134,7 @@
 
 .profile_img
 {
-  border-radius: 10%;
+  border-radius: 8%;
 }
 
 .profile_content
@@ -128,11 +168,14 @@
 /* Education Section styles*/
 .education_section
 {
-  background: purple;
+  background: #3b8ad8;
 }
-
+.education_container
+{
+  margin: 0px 12%;
+}
 .education_content{
-  height:500px;
+  background-color: rgba(87,6,140,.35);
 }
 </style>
 
