@@ -1,41 +1,38 @@
 <template>
   <v-app>
+    <!-- Not sure why it doesn't collapse properly at smaller screens
     <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
+      <v-toolbar-title class="headline text-uppercase nav_logo_btn" @click="scrollToSection('profile')">
         <span>David Zheng</span>
         <span class="font-weight-light"></span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        @click="scrollToSection('education')"
       >
         <span class="mr-2">Education</span>
       </v-btn>
       <v-btn
         text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        @click="scrollToSection('experience')"
       >
         <span class="mr-2">Experience</span>
       </v-btn>
       <v-btn
         text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        @click="scrollToSection('projects')"
       >
         <span class="mr-2">Projects</span>
       </v-btn>
       <v-btn
         text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        @click="scrollToSection('contact')"
       >
         <span class="mr-2">Contact</span>
       </v-btn>
     </v-app-bar>
-
+    -->
     <v-content>
       <!-- Top most parallax -->
       <!-- Not sure why my container doesn't grow once pass 1680px width-->
@@ -64,6 +61,12 @@
   </v-app>
 </template>
 
+<style scoped>
+.nav_logo_btn:Hover
+{
+  cursor: pointer;
+}
+</style>
 <script>
 import Main from './views/Main';
 
@@ -71,6 +74,12 @@ export default {
   name: 'App',
   components: {
     Main,
+  },
+  methods: {
+    scrollToSection: function(sectionID){
+      let section = document.getElementById(sectionID);
+      section.scrollIntoView({block: "start", behavior: "smooth"});
+    }
   },
   data: () => ({
     //

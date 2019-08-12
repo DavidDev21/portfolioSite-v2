@@ -5,6 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 Vue.config.productionTip = false
 
+Vue.use(vuetify);
+
 new Vue({
   vuetify,
   icons: {
