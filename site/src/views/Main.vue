@@ -147,6 +147,13 @@
                         </p>
                       </v-flex>
                     </v-layout>
+                    <!-- project date -->
+                    <v-layout column wrap align-center>
+                      <v-flex xs12>
+                        <p>Project Date: <strong>Sept 2018 - May 2019</strong>
+                        </p>
+                      </v-flex>
+                    </v-layout>
                     <!-- project link -->
                   </v-container>
                 </v-flex>
@@ -183,6 +190,13 @@
                       </v-flex>
                     </v-layout>
                     <!-- project link -->
+                    <!-- project date -->
+                    <v-layout column wrap align-center>
+                      <v-flex xs12>
+                        <p>Project Date: <strong>Dec 2017 - Jan 2018</strong>
+                        </p>
+                      </v-flex>
+                    </v-layout>
                   </v-container>
                 </v-flex>
               </v-layout>
