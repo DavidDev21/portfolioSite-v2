@@ -43,3 +43,54 @@
                 </v-container>
               </v-flex>
             </v-layout>
+
+
+
+<!-- Profile Card -->
+          <v-container>
+          <v-layout align-center justify-center row>
+            <v-flex>
+              <!-- Profile Card -->
+              <v-container class="profile_card">
+                <v-layout class="text-black profile_content" pa-4 row wrap justify-center align-center>
+                  <v-flex xs12 sm3 align-self-center pr-3>
+                    <v-img
+                      class="profile_img"
+                      :src="require('@/assets/profile_picture.jpg')"
+                      max-height="210px"
+                      width="225px"
+                    >
+                    </v-img>
+                  </v-flex>
+                  
+                  <div class="divider_line">
+                  </div>
+                  <v-flex sm7 md7 ml-4 my-5>
+                    <!-- Right side of the profile card-->
+                    <v-container>
+                      <!-- Profile description -->
+                      <v-layout row wrap>
+                        <v-flex>
+                          <h3 style="margin-bottom:3px;">Hi, my name is David Zheng</h3>
+                          <p>
+                            I am a senior at NYU Tandon studying Computer Science. I started coding since high school
+                            on the robotics team and always loved creating solutions towards challenging problems. Computer Science 
+                            has taught me to tackle difficult problems through logical and creative thinking. Perspective and persistent 
+                            are important when solutions aren't obvious. I'm a quick learner and enthusiastic about tackling difficult problems
+                            and growing as an individual. 
+                          </p>
+                        </v-flex>
+                      </v-layout>
+                      <!-- Profile links-->
+                      <v-layout mt-3 row wrap justify-center>
+                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21">Github <v-icon right>fab fa-github</v-icon></v-btn>
+                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/">LinkedIn <v-icon right>fab fa-linkedin</v-icon></v-btn>
+                          <v-btn class="mr-3 btn_hover" color="primary" href="David_Zheng_Resume_Clean.pdf" download="David Zheng Resume">Resume <v-icon right>fas fa-download</v-icon></v-btn>
+                      </v-layout>
+                    </v-container>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+          </v-layout>
+          </v-container>

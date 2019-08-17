@@ -2,57 +2,55 @@
   <div>
     <v-container class="container_style" fluid pt-0>
       <!-- Profile Card Section / Top Intro Section-->
-      <v-layout id="profile" class="profile_section" align-center row wrap>
-        <v-flex>
-        <!--<v-parallax class="parallax_image lower_opacity" :src="require('@/assets/NYC_background.jpg')">-->
-          <v-container>
-          <v-layout align-center justify-center row>
-            <v-flex>
-              <!-- Profile Card -->
-              <v-container class="mx-auto profile_card">
-                <v-layout class="text-black profile_content" pa-0 row wrap justify-center align-center>
-                  <v-flex sm3 md3 shrink class="mr-4">
-                    <v-img
-                      class="profile_img"
-                      :src="require('@/assets/profile_picture.jpg')"
-                      max-height="200px"
-                      width="225px"
-                    >
-                    </v-img>
-                  </v-flex>
-                  
-                  <div class="divider_line">
-                  </div>
-                  <v-flex sm7 md7 ml-4 my-5>
-                    <!-- Right side of the profile card-->
-                    <v-container>
-                      <!-- Profile description -->
-                      <v-layout row wrap>
-                        <v-flex>
-                          <h3 style="margin-bottom:3px;">Hi, my name is David Zheng</h3>
-                          <p>
-                            I am a senior at NYU Tandon studying Computer Science. I started coding since high school
-                            on the robotics team and always loved creating solutions towards challenging problems. Computer Science 
-                            has taught me to tackle difficult problems through logical and creative thinking. Perspective and persistent 
-                            are important when solutions aren't obvious. I'm a quick learner and enthusiastic about tackling difficult problems
-                            and growing as an individual. 
-                          </p>
-                        </v-flex>
+      <v-layout id="profile" class="profile_section" justify-center align-center row wrap py-5>
+        <v-flex xs10 sm9>
+<!-- Profile Card -->
+                  <v-container class="profile_card px-4">
+                      <v-layout row wrap px-3>
+                      <!-- Company Logo -->
+                      <v-flex class="border-right" xs12 sm3 align-self-center pr-3>
+                          <v-container>
+                              <v-layout column align-center justify-center>
+                                  <v-flex align-self-center>
+                                    <v-img class="profile_img" width="225px" max-height="225px" contain :src="require('@/assets/profile_picture.jpg')">
+                                    </v-img>
+                                  </v-flex>
+                              </v-layout>
+                          </v-container>
+                      </v-flex>
+                      <!-- Profile Summary (right side of card) -->
+                      <v-flex xs12 sm9 pl-3>
+                          <v-container>
+                          <v-layout row wrap mb-3>
+                              <v-flex>
+                              <h3 class="">Hi, my name is David Zheng</h3>
+                              </v-flex>
+                          </v-layout>
+                          <!-- Profile Description (Paragraph Format) -->
+                          <v-layout row wrap>
+                              <v-flex>
+                                  <p>I am a senior at NYU Tandon studying Computer Science. I started coding since high school
+                                    on the robotics team and always loved creating solutions towards challenging problems. Computer Science 
+                                    has taught me to tackle difficult problems through logical and creative thinking. Perspective and persistent 
+                                    are important when solutions aren't obvious. I'm a quick learner and enthusiastic about tackling difficult problems
+                                    and growing as an individual. </p>
+                              </v-flex>
+                          </v-layout>
+                          <v-layout row wrap justify-center align-center>
+                            <v-flex xs4>
+                              <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21">Github <v-icon right>fab fa-github</v-icon></v-btn>
+                            </v-flex>
+                            <v-flex xs4>
+                                <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/">LinkedIn <v-icon right>fab fa-linkedin</v-icon></v-btn>
+                            </v-flex>
+                            <v-flex xs4>
+                                <v-btn class="mr-3 btn_hover" color="primary" href="David_Zheng_Resume_Clean.pdf" download="David Zheng Resume">Resume <v-icon right>fas fa-download</v-icon></v-btn>
+                            </v-flex>
+                          </v-layout>
+                          </v-container>
+                      </v-flex>
                       </v-layout>
-                      <!-- Profile links-->
-                      <v-layout mt-3 row wrap justify-center>
-                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21">Github <v-icon right>fab fa-github</v-icon></v-btn>
-                          <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/">LinkedIn <v-icon right>fab fa-linkedin</v-icon></v-btn>
-                          <v-btn class="mr-3 btn_hover" color="primary" href="David_Zheng_Resume_Clean.pdf" download="David Zheng Resume">Resume <v-icon right>fas fa-download</v-icon></v-btn>
-                      </v-layout>
-                    </v-container>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-flex>
-          </v-layout>
-          </v-container>
-        <!--</v-parallax>-->
+                  </v-container>
         </v-flex>
       </v-layout>
       <!-- Experience Section -->
@@ -252,44 +250,29 @@
 /* Large */
 @media only screen and (min-width: 960px)
 {
-  .divider_line
+  .divider_line_right
   {
-    border-left: 1.5px solid gray;
+    border-right: 1.5px solid gray;
     height: 175px;
   }
 }
 /* Medium */
 @media only screen and (min-width: 601px) and (max-width: 959px) {
-  .parallax_image {
-    height: 700px !important;
-    width: 100%;
-  }
-  .profile_card
+  .divider_line_right
   {
-    max-width: 700px !important;
-  }
-  .divider_line
-  {
-    border-left: 1.5px solid gray;
+    border-right: 1.5px solid gray;
     height: 300px;
   }
 }
 
 /* Small */
-@media only screen and (max-width: 600px) {
-  .parallax_image {
-    height: 800px !important;
-    width: 100%;
-  }
-  .profile_section
+@media only screen and (min-width: 600px) {
+  .border-right
   {
-    height: 800px !important;
-  }
-  .profile_card
-  {
-    max-width: 325px !important;
+    border-right: 1px solid grey;
   }
 }
+
 
 .test
 {
@@ -349,27 +332,20 @@ a:Hover
   height: 100px;
 }
 
+/* Profile Section */
 .profile_img
 {
   border-radius: 8%;
 }
 
-.profile_content
+.profile_section
 {
-  padding-top: 6%;
-  padding-bottom: 6%;
+  height: 100vh;
 }
 .profile_card
 {
   border-radius: 5%;
   background-color: rgba(255,255,255,0.7);
-  max-width: 820px;
-  min-height: 300px;
-}
-.parallax_image
-{
-  width: 100%;
-  height: 100%;
 }
 
 /* Button Hover */
@@ -388,7 +364,6 @@ a:Hover
   background-image: url("../assets/NYC_background.jpg");
   background-size: cover;
   background-attachment: fixed;
-  height: 650px;
 }
 
 
