@@ -9,10 +9,12 @@
                 <!-- Company Logo -->
                 <v-flex xs12 sm3 align-self-center pr-3>
                     <v-container>
-                    <v-layout column align-center justify-center>
-                    <v-img width="225px" height="225px" contain :src="require('@/assets/' + this.companyLogo)">
-                    </v-img>
-                    </v-layout>
+                    <a class="cursor_pointer" target="_blank" :href="this.companyLink">
+                        <v-layout column align-center justify-center>
+                            <v-img width="225px" height="225px" contain :src="require('@/assets/' + this.companyLogo)">
+                            </v-img>
+                        </v-layout>
+                    </a>
                     </v-container>
                 </v-flex>
                 <!-- Experience Summary (right side of card) -->
@@ -53,6 +55,11 @@
 a:link 
 {
   text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: underline;
 }
 /* Experience section */
 .experience_card_container

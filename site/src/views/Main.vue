@@ -55,58 +55,38 @@
         <!--</v-parallax>-->
         </v-flex>
       </v-layout>
+      <!-- Experience Section -->
+      <v-layout id="experience" class="primary" row wrap justify-center>
+        <v-flex class="" xs10 sm9>
+          <v-container py-5 mb-5>
+            <!-- Section Header -->
+            <v-layout row wrap text-center justify-center>
+              <v-flex>
+                <h1 class="text-white">Experiences</h1>
+                <div class="horizontal_divider_thick"></div>
+              </v-flex>
+            </v-layout>
 
-      <!-- Then follows Education-->
-      <v-layout id="education" class="education_section" row wrap justify-center pb-5>
-        <v-container pa-5 mb-5 class="education_container">
-          <v-layout row wrap>
-            <v-flex mb-3 pa-4>
-              <h1 class="text-white">Education</h1>
-            </v-flex>
-          </v-layout>
-          <v-layout row wrap justify-space-around>
-            <!-- School Logo -->
-            <v-flex align-self-center md2 mt-2 mb-4>
-              <v-container pa-0>
-                <v-layout justify-center>
-                  <v-flex shrink>
-                    <v-img
-                      class="profile_img"
-                      :src="require('@/assets/nyu.png')"
-                      max-height="270px"
-                      max-width="270px"
-                    >
-                    </v-img>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-flex>
-            <v-flex md9>
-              <!-- Education description -->
-              <v-container class="education_content text-white">
-                <v-layout row wrap pa-3>
-                  <v-flex>
-                    <h3>NYU Tandon School of Engineering | B.S Computer Science | 2016 - 2020</h3>
-                  </v-flex>
-                </v-layout>
-                <v-layout row wrap px-5>
-                  <v-flex>
-                    <ul>
-                      <li><strong>Relevant Coursework: </strong> Data Structures &amp; Algorithms,
-                          Databases, Computer Networking, Operating Systems, Software Engineering, OOP
-                      </li>
-                      <li><strong>Awards: </strong> Pearl Junior Brownstein Award, Dean's List 2016-2019</li>
-                      <li><strong>GPA: </strong> 3.9</li>
-                    </ul>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-flex>
-          </v-layout>
-        </v-container>
+
+            <!-- Experiences -->
+            <div v-for="(item,index) in experiences" :key="index">
+              <!-- Ladder Ropes -->
+              <v-layout row wrap justify-center>
+                <v-flex xs4 class="vertical_border">
+                </v-flex>
+              </v-layout>
+              <experienceCard :companyLogo="item.companyLogo"
+                              :companyName="item.companyName"
+                              :companyLink="item.companyLink"
+                              :header="item.header"
+                              :description="item.description"
+                              :listDescription="item.listDescription"></experienceCard>
+            </div>
+          </v-container>
+        </v-flex>
       </v-layout>
-
-      <!-- Projects -->
+      <!-- End of experience section -->
+      <!-- Projects Section -->
       <!-- Two projects per row max -->
       <v-layout id="project" class="project_section" row wrap justify-center pb-5>
         <v-flex>
@@ -210,39 +190,61 @@
             </v-container>
         </v-flex>
       </v-layout>
-      <!-- Experience Section -->
-      <v-layout id="experience" class="primary" row wrap justify-center>
-        <v-flex class="" xs10 sm9>
-          <v-container py-5 mb-5>
-            <!-- Section Header -->
-            <v-layout row wrap text-center justify-center>
-              <v-flex>
-                <h1 class="text-white">Experiences</h1>
-                <div class="horizontal_divider_thick"></div>
-              </v-flex>
-            </v-layout>
-
-
-            <!-- Experiences -->
-            <div v-for="(item,index) in experiences" :key="index">
-              <!-- Ladder Ropes -->
-              <v-layout row wrap justify-center>
-                <v-flex xs4 class="vertical_border">
-                </v-flex>
-              </v-layout>
-              <experienceCard :companyLogo="item.companyLogo"
-                              :companyName="item.companyName"
-                              :companyLink="item.companyLink"
-                              :header="item.header"
-                              :description="item.description"
-                              :listDescription="item.listDescription"></experienceCard>
-            </div>
-          </v-container>
-        </v-flex>
-      <!-- End of experience section -->
+      <!-- End of Project Section -->
+      <!-- Education Section -->
+      <v-layout id="education" class="education_section" row wrap justify-center pb-5>
+        <v-container pa-5 mb-5 class="education_container">
+          <v-layout row wrap>
+            <v-flex mb-3 pa-4>
+              <h1 class="text-white">Education</h1>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap justify-space-around>
+            <!-- School Logo -->
+            <v-flex align-self-center md2 mt-2 mb-4>
+              <v-container pa-0>
+                <v-layout justify-center>
+                  <v-flex shrink>
+                    <v-img
+                      class="profile_img"
+                      :src="require('@/assets/nyu.png')"
+                      max-height="270px"
+                      max-width="270px"
+                    >
+                    </v-img>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+            <v-flex md9>
+              <!-- Education description -->
+              <v-container class="education_content text-white">
+                <v-layout row wrap pa-3>
+                  <v-flex>
+                    <h3>NYU Tandon School of Engineering | B.S Computer Science | 2016 - 2020</h3>
+                  </v-flex>
+                </v-layout>
+                <v-layout row wrap px-5>
+                  <v-flex>
+                    <ul>
+                      <li><strong>Relevant Coursework: </strong> Data Structures &amp; Algorithms,
+                          Databases, Computer Networking, Operating Systems, Software Engineering, OOP
+                      </li>
+                      <li><strong>Awards: </strong> Pearl Junior Brownstein Award, Dean's List 2016-2019</li>
+                      <li><strong>GPA: </strong> 3.9</li>
+                    </ul>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+          </v-layout>
+        </v-container>
       </v-layout>
-      <!-- End of main container -->
+      <!-- End of Education Section -->
+      <!-- Contact Me Section -->
+      <!-- End of Contact Me Section -->
     </v-container>
+    <!-- End of main container -->
   </div>
 </template>
 
@@ -300,6 +302,10 @@ a:link
   text-decoration: none;
 }
 
+a:Hover
+{
+  text-decoration: underline;
+}
 .cursor_pointer
 {
   cursor: pointer;
