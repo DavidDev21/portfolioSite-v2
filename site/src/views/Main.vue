@@ -107,16 +107,22 @@
       </v-layout>
 
       <!-- Projects -->
+      <!-- Two projects per row max -->
       <v-layout id="project" class="project_section" row wrap justify-center pb-5>
         <v-flex>
             <v-container class="project_container mt-5">
+              <!-- Section Header -->
               <v-layout row wrap mb-5>
                 <v-flex>
                   <h1 class="text-black text-center">Projects</h1>
                 </v-flex>
               </v-layout>
+
+              <!-- First Row --> 
+              <!-- Cards -->
               <v-layout row wrap align-start justify-space-around>
-                <v-flex xs12 sm4 md4 mb-5>
+                <!-- Project #1 -->
+                <v-flex xs12 sm4 md4 ma-5>
                   <v-container class="project_card text-black">
                     <!-- project title -->
                     <v-layout row wrap text-center justify-center>
@@ -129,7 +135,7 @@
                     <div class="horizontal_divider"></div>
                     <!-- project image / video (optional) -->
                     <v-layout column wrap align-center>
-                      <a class="cursor_pointer" target="_blank" href="https://github.com/DavidDev21/Shuffle">
+                      <a class="cursor_pointer py-3" target="_blank" href="https://github.com/DavidDev21/Shuffle">
                       <v-flex my-3 xs12 shrink>
                         <v-img :src="require('@/assets/shuffleLogo.png')" max-width=200 max-height=100>
                         </v-img>
@@ -157,7 +163,8 @@
                     <!-- project link -->
                   </v-container>
                 </v-flex>
-                <v-flex xs12 sm4 md4 mb-5>
+                <!-- Project #2 -->
+                <v-flex xs12 sm4 md4 ma-5>
                     <v-container class="project_card text-black">
                     <!-- project title -->
                     <v-layout row wrap text-center justify-center>
@@ -203,7 +210,38 @@
             </v-container>
         </v-flex>
       </v-layout>
-      <!-- Projects -->
+      <!-- Experience Section -->
+      <v-layout id="experience" class="primary" row wrap justify-center>
+        <v-flex class="" xs10 sm9>
+          <v-container py-5 mb-5>
+            <!-- Section Header -->
+            <v-layout row wrap text-center justify-center>
+              <v-flex>
+                <h1 class="text-white">Experiences</h1>
+                <div class="horizontal_divider_thick"></div>
+              </v-flex>
+            </v-layout>
+
+
+            <!-- Experiences -->
+            <div v-for="(item,index) in experiences" :key="index">
+              <!-- Ladder Ropes -->
+              <v-layout row wrap justify-center>
+                <v-flex xs4 class="vertical_border">
+                </v-flex>
+              </v-layout>
+              <experienceCard :companyLogo="item.companyLogo"
+                              :companyName="item.companyName"
+                              :companyLink="item.companyLink"
+                              :header="item.header"
+                              :description="item.description"
+                              :listDescription="item.listDescription"></experienceCard>
+            </div>
+          </v-container>
+        </v-flex>
+      <!-- End of experience section -->
+      </v-layout>
+      <!-- End of main container -->
     </v-container>
   </div>
 </template>
@@ -273,6 +311,13 @@ a:link
   width: 75%;
   margin: 0 auto;
 }
+
+.horizontal_divider_thick
+{
+  border-bottom: 3px solid black;
+  width: 75%;
+  margin: 0 auto;
+}
 .text-black
 {
   color:black;
@@ -289,6 +334,13 @@ a:link
 .lower_opacity
 {
   opacity: 0.85;
+}
+
+.vertical_border
+{
+  border-left: 10px solid #8F1AF1;
+  border-right: 10px solid #8F1AF1;
+  height: 100px;
 }
 
 .profile_img
@@ -361,24 +413,77 @@ a:link
 
 .project_video
 {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 100%;
+  max-height: 100%;
 }
 .project_card
 {
   border-radius: 5%;
   background-color: rgba(255,255,255,.9);
 }
+
+/* Experience section */
+.experience_card_container
+{
+  background-color: white;
+  border-radius: 2%;
+}
+
+.experience_header
+{
+  color: gray;
+}
+
 </style>
 
 <script>
+import experienceCard from "@/components/experienceCard";
+
 export default {
+  components: {
+    experienceCard
+  },
   methods: {
     downloadResume: function() {
       
     }
   },
   data: () => ({
+    experiences: [{companyName: "BNY Mellon",
+                  companyLink: "https://www.bnymellon.com/",
+                  companyLogo: "bnymellon_logo.png",
+                  header: "| Summer Technology Analyst | Summer 2019",
+                  description: `BNY Mellon is a investment company and the #1 custodian bank in the world.
+                                I worked on the Treasury Modeling Platform team, developing automation scripts and creating
+                                data visualizations. I used Big Data frameworks and visualization tools
+                                such as Hadoop and PowerBI. My experience taught me how to navigate within an large existing codebase and be
+                                able to contribute meaningful work that has value for the team.`,
+                  listDescription: ["Created 5 PowerBI reports to make data more accessible for our end-users",
+                                    "Developed bash scripts to automate metadata refresh for impala tables",
+                                    "Converted an existing hive table to be in parquet format and compressed with snappy."]},
+                  {companyName: "Chairseven",
+                  companyLink: "http://www.chairseven.com/",
+                  companyLogo: "chairseven_logo.jpg",
+                  header: "| QA Intern | Summer 2018",
+                  description: `Chairseven is an enterprise software and digital content agency. 
+                                It builds custom software and technology solutions for its clients, but also
+                                acts as a consultant to determine the best tools that best satisfies the needs of the client.
+                                During my time, the team worked on web interactives for a publishing company. I learned what it is like
+                                to work in a small team and be able to wear multiple hats.`,
+                  listDescription: ["Performed QA Testing on new features completed by developers",
+                                    "Modified codebase and completed Gitlab tickets for feature changes and bug fixes",
+                                    "Communicated with developers on bugs and issues found during QA Testing"]},
+                  {companyName: "Fullstack Modular",
+                  companyLink: "https://www.fullstackmodular.com/about-us/",
+                  companyLogo: "fullstack_modular_logo.png",
+                  header: "| IT Intern | Summer 2017",
+                  description: `Fullstack Modular is a construction company that builds new buildings using modular construction.
+                                The goal is to create buildings are that cheaper, better, and stronger. I worked on various internal proof
+                                of concept projects to improve efficiency within the company, both as an individual and with a group of interns.
+                                The experience showed me how technology can be impactful to many different industries and fields beyond the tech sector.`,
+                  listDescription: ["Colloborated on a internal web platform as a central source of information for all employees (Used Drupal)",
+                                    "Developed and deployed a C# Winform application to automate folder structure creation for new projects"]},
+                  ]
   }),
 };
 </script>
