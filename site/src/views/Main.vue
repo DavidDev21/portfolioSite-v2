@@ -1,14 +1,15 @@
 <template>
   <div>
-    <v-container class="container_style" fluid pt-0>
+    <v-container class="container_style" fluid py-0>
       <!-- Profile Card Section / Top Intro Section-->
       <v-layout id="profile" class="profile_section" justify-center align-center row wrap py-5>
-        <v-flex xs10 sm9>
-<!-- Profile Card -->
+        <v-flex xs10 sm10 md8>
+                  <!-- Profile Card -->
                   <v-container class="profile_card px-4">
                       <v-layout row wrap px-3>
                       <!-- Company Logo -->
-                      <v-flex class="border-right" xs12 sm3 align-self-center pr-3>
+                      <!-- sm3 -->
+                      <v-flex class="border-right" xs12 md3 align-self-center pr-3>
                           <v-container>
                               <v-layout column align-center justify-center>
                                   <v-flex align-self-center>
@@ -19,9 +20,10 @@
                           </v-container>
                       </v-flex>
                       <!-- Profile Summary (right side of card) -->
-                      <v-flex xs12 sm9 pl-3>
+                      <!-- sm9 -->
+                      <v-flex xs12 md9 pl-3>
                           <v-container>
-                          <v-layout row wrap mb-3>
+                          <v-layout row wrap mb-1>
                               <v-flex>
                               <h3 class="">Hi, my name is David Zheng</h3>
                               </v-flex>
@@ -36,15 +38,15 @@
                                     and growing as an individual. </p>
                               </v-flex>
                           </v-layout>
-                          <v-layout row wrap justify-center align-center>
-                            <v-flex xs4>
-                              <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21">Github <v-icon right>fab fa-github</v-icon></v-btn>
+                          <v-layout class="flex_column" row wrap justify-center align-center text-center>
+                            <v-flex xs4 sm3 mb-3>
+                              <v-btn class="btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21">Github <v-icon right>fab fa-github</v-icon></v-btn>
                             </v-flex>
-                            <v-flex xs4>
-                                <v-btn class="mr-3 btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/">LinkedIn <v-icon right>fab fa-linkedin</v-icon></v-btn>
+                            <v-flex xs4 sm3 mb-3>
+                              <v-btn class="btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/">LinkedIn <v-icon right>fab fa-linkedin</v-icon></v-btn>
                             </v-flex>
-                            <v-flex xs4>
-                                <v-btn class="mr-3 btn_hover" color="primary" href="David_Zheng_Resume_Clean.pdf" download="David Zheng Resume">Resume <v-icon right>fas fa-download</v-icon></v-btn>
+                            <v-flex xs4 sm3 mb-3>
+                              <v-btn class="btn_hover" color="primary" href="David_Zheng_Resume_Clean.pdf" download="David Zheng Resume">Resume <v-icon right>fas fa-download</v-icon></v-btn>
                             </v-flex>
                           </v-layout>
                           </v-container>
@@ -54,7 +56,7 @@
         </v-flex>
       </v-layout>
       <!-- Experience Section -->
-      <v-layout id="experience" class="primary" row wrap justify-center>
+      <v-layout id="experience" class="primary" row wrap justify-center py-5>
         <v-flex class="" xs10 sm9>
           <v-container py-5 mb-5>
             <!-- Section Header -->
@@ -240,6 +242,31 @@
       </v-layout>
       <!-- End of Education Section -->
       <!-- Contact Me Section -->
+      <v-layout id="contact" class="contact_section" row wrap justify-center align-center>
+        <v-flex xs11 sm9>
+          <v-container>
+            <v-layout class="text-white" row wrap justify-center align-center text-center pb-5 mb-5>
+              <v-flex xs12>
+                <h1>You reached the end! Feel free to learn more or reach out to me!</h1>
+              </v-flex>
+            </v-layout>
+            <v-layout row wrap justify-center>
+              <v-flex xs3 sm2 text-center>
+                <v-btn class="btn_hover" color="primary" target="_blank" href="https://github.com/DavidDev21"><v-icon>fab fa-github</v-icon></v-btn>
+              </v-flex>
+              <v-flex xs3 sm2 text-center>
+                <v-btn class="btn_hover" color="primary" target="_blank" href="https://www.linkedin.com/in/david-zheng-977746b2/"><v-icon>fab fa-linkedin</v-icon></v-btn>
+              </v-flex>
+              <v-flex xs3 sm2 text-center>
+                <v-btn class="btn_hover" color="primary" target="_blank" href="David_Zheng_Resume_Clean.pdf" download="David Zheng Resume"><v-icon>fas fa-download</v-icon></v-btn>
+              </v-flex>
+              <v-flex xs3 sm2 text-center>
+                <v-btn class="btn_hover" color="primary" target="_blank" href="mailto:david.zheng@nyu.edu"><v-icon>fas fa-envelope</v-icon></v-btn>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-flex>
+      </v-layout>
       <!-- End of Contact Me Section -->
     </v-container>
     <!-- End of main container -->
@@ -255,6 +282,10 @@
     border-right: 1.5px solid gray;
     height: 175px;
   }
+  .border-right
+  {
+    border-right: 1px solid grey;
+  }
 }
 /* Medium */
 @media only screen and (min-width: 601px) and (max-width: 959px) {
@@ -266,13 +297,12 @@
 }
 
 /* Small */
-@media only screen and (min-width: 600px) {
-  .border-right
+@media only screen and (max-width: 600px) {
+  .flex_column
   {
-    border-right: 1px solid grey;
+    flex-direction: column !important;
   }
 }
-
 
 .test
 {
@@ -331,7 +361,12 @@ a:Hover
   border-right: 10px solid #8F1AF1;
   height: 100px;
 }
-
+/* Button Hover */
+.btn_hover:Hover
+{
+  background-color:lightblue !important;
+  transform: scale(1.09);
+}
 /* Profile Section */
 .profile_img
 {
@@ -346,16 +381,6 @@ a:Hover
 {
   border-radius: 5%;
   background-color: rgba(255,255,255,0.7);
-}
-
-/* Button Hover */
-.btn_hover:Hover
-{
-  background-color:lightblue !important;
-  transform: scale(1.09);
-}
-.container_style
-{
 }
 
 /* Profile Section */
@@ -415,6 +440,14 @@ a:Hover
   color: gray;
 }
 
+/* Contact Section */
+.contact_section
+{
+  background-image: url("../assets/computer_bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
 </style>
 
 <script>
