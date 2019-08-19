@@ -413,7 +413,18 @@ export default {
                 projectDate: "Dec 2017 - Jan 2018",
                 imgPath: undefined,
                 videoPath: "gplatform_video.mp4",
-                videoType: "video/mp4"}],
+                videoType: "video/mp4"},
+                {projectTitle: "Personal Site Revamp",
+                projectDescription: `The current site is a revamp project of an old existing site. 
+                                    It was a personal test to see how much I have grown as an individual
+                                    and as a developer from when I first started studying Computer Science
+                                    in college. I developed the new site using VueJS (frontend framework), and
+                                    Vuetify (for styling and bootstrap-like features).`,
+                projectLink: "https://github.com/DavidDev21/portfolioSite/",
+                projectDate: "August 2019",
+                imgPath: undefined,
+                videoPath: undefined,
+                videoType: undefined}],
     experiences: [{companyName: "BNY Mellon",
                   companyLink: "https://www.bnymellon.com/",
                   companyLogo: "bnymellon_logo.png",
