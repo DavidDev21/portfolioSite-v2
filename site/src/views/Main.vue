@@ -25,17 +25,18 @@
                           <v-container>
                           <v-layout row wrap mb-1>
                               <v-flex>
-                              <h3 class="">Hi, my name is David Zheng</h3>
+                              <h3 class="">David Zheng</h3>
                               </v-flex>
                           </v-layout>
                           <!-- Profile Description (Paragraph Format) -->
                           <v-layout row wrap>
                               <v-flex>
-                                  <p>I am a senior at NYU Tandon studying Computer Science. I started coding since high school
-                                    on the robotics team and always loved creating solutions towards challenging problems. Computer Science 
-                                    has taught me to tackle difficult problems through logical and creative thinking. Perspective and persistent 
-                                    are important when solutions aren't obvious. I'm a quick learner and enthusiastic about tackling difficult problems
-                                    and growing as an individual. </p>
+                                  <p>Hi there, welcome.</p>
+                                  <p>I am currently a New York based aspiring Software Developer (always aspiring). I graduated from NYU Tandon in May of 2020
+                                      and currently working for the Bank of New York Mellon as a developer hired through the campus hire program.
+                                      There is always a lot to learn and I still have a lot of years ahead of me. I am open to any new opportunities that can
+                                      leverage and expand my skills to deliver value and solve people's problems through technology. Feel free to reach out!
+                                  </p>
                               </v-flex>
                           </v-layout>
                           <v-layout class="flex_column" row wrap justify-center align-center text-center>
@@ -56,7 +57,7 @@
         </v-flex>
       </v-layout>
       <!-- Experience Section -->
-      <v-layout id="experience" class="primary" row wrap justify-center py-5>
+      <v-layout id="experience" class="bg-calm-blue" row wrap justify-center py-5>
         <v-flex class="" xs10 sm9>
           <v-container py-5 mb-5>
             <!-- Section Header -->
@@ -119,51 +120,91 @@
       </v-layout>
       <!-- End of Project Section -->
       <!-- Education Section -->
-      <v-layout id="education" class="education_section" row wrap justify-center pb-5>
+      <v-layout id="education" class="education_section bg-calm-blue" row wrap justify-center pb-5>
         <v-container pa-5 mb-5 class="education_container">
           <v-layout row wrap>
-            <v-flex mb-3 pa-4>
-              <h1 class="text-white">Education</h1>
-            </v-flex>
-          </v-layout>
-          <v-layout row wrap justify-space-around>
-            <!-- School Logo -->
-            <v-flex align-self-center md2 mt-2 mb-4>
-              <v-container pa-0>
-                <v-layout justify-center>
-                  <v-flex shrink>
-                    <v-img
-                      class="profile_img"
-                      :src="require('@/assets/nyu.png')"
-                      max-height="270px"
-                      max-width="270px"
-                    >
-                    </v-img>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-flex>
-            <v-flex md9>
-              <!-- Education description -->
-              <v-container class="education_content text-white">
-                <v-layout row wrap pa-3>
-                  <v-flex>
-                    <h3>NYU Tandon School of Engineering | B.S Computer Science | 2016 - 2020</h3>
-                  </v-flex>
-                </v-layout>
-                <v-layout row wrap px-5>
-                  <v-flex>
-                    <ul>
-                      <li><strong>Relevant Coursework: </strong> Data Structures &amp; Algorithms,
-                          Databases, Computer Networking, Operating Systems, Software Engineering, OOP
-                      </li>
-                      <li><strong>Awards: </strong> Pearl Junior Brownstein Award, Dean's List 2016-2019</li>
-                      <li><strong>GPA: </strong> 3.9</li>
-                    </ul>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-flex>
+            <v-row wrap>
+              <v-col cols=12>
+                <v-flex mb-3 pa-4>
+                  <h1 class="text-white">Education</h1>
+                </v-flex>
+              </v-col>
+            </v-row>
+
+            <v-row wrap justify-space-around >
+              <!-- School Logo -->
+              <v-col align-self=center xs=12 sm=12 md=3 mt-2 mb-4>
+                <v-container pa-0>
+                  <v-layout justify-center>
+                    <!-- Apparently the shrink prevents the v-img from randomy adding in a margin-->
+                    <v-flex shrink>
+                      <v-img
+                        class="profile_img"
+                        :src="require('@/assets/nyu.png')"
+                        max-height="270px"
+                        max-width="270px"
+                      >
+                      </v-img>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-col>
+              <v-col>
+                <!-- Education description -->
+                <v-container class="education_content text-white">
+                  <v-layout row wrap pa-3>
+                    <v-row wrap pa-3>
+                      <v-col>
+                        <v-flex>
+                          <h3>NYU Tandon School of Engineering | B.S Computer Science (Summa Cum Laude) | 2016 - 2020</h3>
+                        </v-flex>
+                      </v-col>
+                    </v-row>
+
+                    <v-row wrap px-5>
+                      <v-col>
+                          <ul>
+                            <li><strong>Relevant Coursework: </strong>
+                                  <v-container pa-0>
+                                    <v-layout>
+                                      <v-row>
+                                        <v-col>
+                                          <ul>
+                                            <li>Software Engineering I &amp; II</li>
+                                            <li>Parallel and Distributed Systems</li>
+                                            <li>Intro to DevOps</li>
+                                            <li>Unix Systems Programming</li>
+                                          </ul>
+                                        </v-col>
+                                        <v-col>                                    
+                                          <ul>
+                                            <li>Data Structures &amp; Algorithms, OOP</li>
+                                            <li>Intro to Databases</li>
+                                            <li>Intro to Computer Networking</li>
+                                            <li>Intro to Operating Systems</li>
+                                          </ul>
+                                        </v-col>
+                                      </v-row>
+
+                                    </v-layout>
+                                  </v-container>
+                            </li>
+                            <li><strong>Awards: </strong> 
+                                <ul>
+                                  <li>University Scholar</li>
+                                  <li>Pearl Senior Brownstein Award</li>
+                                  <li>Pearl Junior Brownstein Award</li>
+                                  <li>Dean's List 2016-2020</li>
+                                </ul>
+                            </li>
+                            <li><strong>GPA: </strong> 3.9</li>
+                          </ul>
+                      </v-col>
+                    </v-row>
+                  </v-layout>
+                </v-container>
+              </v-col>
+            </v-row>
           </v-layout>
         </v-container>
       </v-layout>
@@ -237,6 +278,11 @@
   width: 100%;
 }
 
+.bg-calm-blue
+{
+  background-color: #4470AD;
+}
+
 a:link 
 {
   text-decoration: none;
@@ -284,8 +330,8 @@ a:Hover
 
 .vertical_border
 {
-  border-left: 10px solid #8F1AF1;
-  border-right: 10px solid #8F1AF1;
+  border-left: 10px solid #CCDBEE;
+  border-right: 10px solid #CCDBEE;
   height: 100px;
 }
 /* Button Hover */
@@ -322,14 +368,15 @@ a:Hover
 /* Education Section styles*/
 .education_section
 {
-  background: #3b8ad8;
+
 }
 .education_container
 {
   margin: 0px 12%;
 }
 .education_content{
-  background-color: rgba(87,6,140,.35);
+  /*background-color: rgba(87,6,140,.35);*/
+  background-color: rgba(204, 219, 238,.2);
 }
 
 /* Project Styles*/
@@ -426,6 +473,14 @@ export default {
                 videoPath: undefined,
                 videoType: undefined}],
     experiences: [{companyName: "BNY Mellon",
+                  companyLink: "https://www.bnymellon.com/",
+                  companyLogo: "bnymellon_logo.png",
+                  header: "| Software Developer (TCP Program) | Present",
+                  description: `Hired through the Technology Campus Program. Currently working with a backend team
+                                on designing and building out a RESTFul API service for a debit card management portal.
+                                Learning Spring Boot.`,
+                  listDescription: []},
+                  {companyName: "BNY Mellon",
                   companyLink: "https://www.bnymellon.com/",
                   companyLogo: "bnymellon_logo.png",
                   header: "| Summer Technology Analyst | Summer 2019",
